@@ -49,8 +49,8 @@ body {
   /* Use a comfortable font size and line height */
   font-size: 16px;
   line-height: 1.6;
-  /* Use LineTech font for the whole page, with fallbacks */
-  font-family: 'LineTech', Arial, sans-serif;
+  /* Use Roboto Mono font for the whole page, with fallbacks */
+  font-family: 'Roboto Mono', 'Courier New', Courier, monospace;
 }
 /* Timeline section styles */
 .timeline {
@@ -65,6 +65,7 @@ body {
   margin-bottom: 0px;
   margin-top: 0px;
   /* Optional: light background for the timeline area */
+  scroll-snap-type: x mandatory; /* Enable horizontal snap scrolling */
 
   /* Set width to about 50% and center */
   width: 60%;
@@ -78,7 +79,7 @@ body {
   /* Add some space between cards */
   margin: 16px 8px;
   /* Add padding inside the card */
-  padding: 12px;
+  padding: 10px 10px 10px 10px;
   /* White background for the card */
   background: #ffffff;
   /* Rounded corners */
@@ -92,6 +93,7 @@ body {
   position: relative; /* Needed for overlay positioning */
   overflow: hidden;   /* Hide overlay outside card */
   transition: transform 0.5s; /* Smooth scaling on hover */
+  scroll-snap-align: start; /* Each card will snap to the start */
 }
 
 .timeline > div img {
@@ -101,6 +103,7 @@ body {
   /* Add some space below the image */
   display: block;
   margin: 0 auto 12px auto;
+  margin-bottom: 5px;
   /* Rounded corners for images */
   border-radius: 1px;
   border: black 2px solid;
@@ -124,7 +127,7 @@ body {
   background: rgba(33, 96, 204, 0.85);
   color: #fff;
   font-size: 1em;
-  padding: 15px 10px;
+  padding: 15px 15px 50px 15px;
   box-sizing: border-box;
   /* Smooth fade in/out */
   transition: opacity 0.3s;
@@ -133,6 +136,10 @@ body {
   box-sizing: border-box;
   z-index: 2;
   pointer-events: none; /* Prevent accidental clicks */
+  /* Set a max width and max height for the overlay text area */
+  max-width: 100%;
+  max-height: 100%;
+  overflow-y: auto; /* Allow scrolling if text is too long */
 }
 
 /* Show overlay on hover */
@@ -197,4 +204,17 @@ footer {
     /* Make the logo smaller */
     width: 70px;
   }
+}
+
+.timeline > div h2 {
+  /* Reduce padding/margin for the year */
+  margin-top: 2px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+.timeline > div h3 {
+  /* Reduce margin space for the card subheading */
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
