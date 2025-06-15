@@ -1,1 +1,200 @@
-/* Add your CSS here */
+header img {
+
+  width: 50%;
+  height: auto;
+}
+header {
+
+  width: 60%;
+  padding: 50px 20px 20px 10px;
+  background: linear-gradient(to right, #11459f, #60acd2);
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 0;
+  
+}
+
+header h1 {
+  /* Make the main heading text white */
+  color: #fff;
+  font: 200;
+  /* Increase font size for better readability */
+  font-size: 50px;
+}
+
+header h1 .subtitle {
+  /* Make the subtitle a bit bigger and lighter */
+  display: block;
+  font-size: 30px;
+  font-weight: normal;
+  margin-top: 4px;
+  color: #e0e0e0;
+}
+
+/* Make the horizontal lines in the header shorter and centered */
+header hr {
+  width: 80%;
+  margin: 16px auto;
+}
+
+header p {
+  /* Make the header description text larger */
+  font-size: 20px;
+  margin: 20px;
+}
+
+body {
+  /* Set a light background color for the body */
+  background-color: #cacfd0;
+  /* Use a comfortable font size and line height */
+  font-size: 16px;
+  line-height: 1.6;
+  /* Use LineTech font for the whole page, with fallbacks */
+  font-family: 'LineTech', Arial, sans-serif;
+}
+/* Timeline section styles */
+.timeline {
+  /* Make the timeline scroll horizontally */
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  /* Add some space below for the scrollbar */
+  padding: 10px 20px 30px 10px; /* Match left/right padding with header/footer */
+  /* Add a little space above and below */
+  margin: 30px auto;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  /* Optional: light background for the timeline area */
+
+  /* Set width to about 50% and center */
+  width: 60%;
+  min-width: 320px; /* Prevent it from getting too small */
+}
+
+/* Style for each card inside the timeline */
+.timeline > div {
+  /* Give each card a fixed width */
+  width: 250px;
+  /* Add some space between cards */
+  margin: 16px 8px;
+  /* Add padding inside the card */
+  padding: 12px;
+  /* White background for the card */
+  background: #ffffff;
+  /* Rounded corners */
+  border:rgba(208, 210, 212, 0.88) 2px solid;
+  /* Add a slightly darker box shadow for depth, with more shadow on the right */
+  box-shadow: 4px 0 12px 2px rgba(33, 69, 140, 0.22), 0 2px 8px rgba(0,0,0,0.15);
+  /* Make sure cards don't shrink */
+  flex: 0 0 auto;
+  /* Center text in the card */
+  text-align: center;
+  position: relative; /* Needed for overlay positioning */
+  overflow: hidden;   /* Hide overlay outside card */
+  transition: transform 0.5s; /* Smooth scaling on hover */
+}
+
+.timeline > div img {
+  /* Make images fit the card width and keep aspect ratio */
+  width: 80%;
+  height: 59%;
+  /* Add some space below the image */
+  display: block;
+  margin: 0 auto 12px auto;
+  /* Rounded corners for images */
+  border-radius: 1px;
+  border: black 2px solid;
+}
+
+/* Overlay for the card text */
+.timeline > div p {
+  /* Start hidden */
+  opacity: 0;
+  /* Position overlay absolutely over the card */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* Center text vertically and horizontally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Overlay background with some transparency */
+  background: rgba(33, 96, 204, 0.85);
+  color: #fff;
+  font-size: 1em;
+  padding: 15px 10px;
+  box-sizing: border-box;
+  /* Smooth fade in/out */
+  transition: opacity 0.3s;
+  /* Make text easy to read */
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 2;
+  pointer-events: none; /* Prevent accidental clicks */
+}
+
+/* Show overlay on hover */
+.timeline > div:hover p {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Optional: Show a pointer when hovering over a card */
+.timeline > div:hover {
+  cursor: pointer;
+  /* Slightly highlight the card */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  /* Scale up the card by 5% on hover */
+  transform: scale(1.05);
+}
+
+/* Style for the horizontal line under each year in timeline cards */
+.card-year-line {
+  width: 60%;
+  margin: 8px auto 12px auto;
+  border: none;
+  border-top: 2px solid #11459f;
+}
+
+footer {
+  width: 60.5%;
+  margin: 30px auto;
+  margin-top: 0;
+  text-align: center;
+  /* Add padding to match the header */
+  padding: 20px 10px 10px 10px;
+  /* Use the same linear gradient background as the header */
+  background: linear-gradient(to right, #11459f, #60acd2);
+  /* Make the footer text smaller */
+  font-size: 25px;
+  /* Make the footer text white for contrast */
+  color: #fff;
+}
+/* Responsive styles for small screens */
+@media (max-width: 600px) {
+  header h1 {
+    /* Make the main heading smaller on small screens */
+    font-size: 1.3em;
+  }
+  .timeline {
+    /* Stack cards vertically on small screens */
+    flex-direction: column;
+    /* Remove horizontal scrolling */
+    overflow-x: visible;
+    /* Optional: allow vertical scrolling if needed */
+    overflow-y: auto;
+  }
+  .timeline > div {
+    /* Make cards take full width on small screens */
+    width: 90%;
+    margin: 12px auto;
+    padding: 8px;
+  }
+  header img {
+    /* Make the logo smaller */
+    width: 70px;
+  }
+}
